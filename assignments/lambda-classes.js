@@ -22,6 +22,9 @@ class Instructor extends Person {
     grade(student, string) {
         return `${student.name} recieves a perfect score on ${string}`
     }
+    changeGrade(grade) {
+        return (grade - Math.random())
+    }
 }
 
 class Student extends Person {
@@ -30,6 +33,7 @@ class Student extends Person {
         this.previousBackground = attr.previousBackground
         this.className = attr.className
         this.favSubjects = attr.favSubjects
+        this.grade = attr.grade
     }
     listsSubjects(subject) {
         return subject.forEach(function (i) {
@@ -74,6 +78,7 @@ const doni = new Student({
     previousBackground: 'Plummer',
     className: 'Web02',
     favSubjects: ["Math", "English", "NotMath"],
+    grade: 50,
 });
 
 const sall = new Project_Manager({
@@ -97,6 +102,7 @@ doni.listsSubjects(doni.favSubjects)
 console.log(doni.PRAssignment("Java"))
 console.log(doni.sprintChallenge("Java"))
 
+console.log(sall.changeGrade(doni.grade))
 
 //Random Items to Show Functionality------------------------------------------------------------------
 console.log(sall.name) //-----------------------------Should Print 'Sall'
