@@ -1,51 +1,87 @@
-// CODE here for your Lambda Classes
-/*
-# Prototypes Challenge
-
-Overview: 
-  Review the console.log() and object method invocations at the bottom of the page. 
-  Update the Animal and Dog constructors so that the methods `dog.eat()` and `dog.speak()` match the commented result next to them.
-  
-Challenge: 
-  1. Add the missing `speak` method.
-  2. Complete the `eat` method.
-
-*/
-
-class Animal {
-    constructor(attributes) {
-        this.weight = attributes.weight
-        this.height = attributes.height
-        this.food = attributes.food
-        this.animalCommonName = attributes.animalCommonName
-    }
-    eat() {
-        console.log(`The ${this.animalCommonName} eats ${this.food}`);
-    }
-}
-
-class Dog extends Animal {
-    constructor(dogAttributes) {
-        // Connect the attributes so we can use the this keyword
-        super(dogAttributes)
-        this.name = dogAttributes.name
-        this.bark = dogAttributes.bark
+class Person {
+    constructor(attr) {
+        this.name = attr.name
+        this.age = attr.age
+        this.location = attr.location
     }
     speak() {
-        console.log(`The ${this.name} eats ${this.bark}`);
+        return `Hello my name is ${this.name}, I am from ${this.location}`
+    }
+}
+
+class Instructor extends Person {
+    constructor(attr) {
+        super(attr)
+        this.specialty = attr.specialty
+        this.favLanguage = attr.favLanguage
+        this.catchPhrase = attr.catchPhrase
+    }
+    demo(subject) {
+        return `Today we are learning about ${subject}`
+    }
+    grade(student, string) {
+        return `${student.name} recieves a perfect score on ${subject}`
+    }
+}
+
+class Student extends Person {
+    constructor(attr) {
+        super(attr)
+        this.previousBackground = attr.previousBackground
+        this.className = attr.className
+        this.favSubjects = attr.favSubjects
+    }
+    listsSubjects() {}
+    PRAssignment(subject) {
+        return `${student.name} has submitted a PR for ${subject}`
+    }
+    sprintChallenge(subject) {
+        return `${student.name} has begun sprint challenge on ${subject}`
+    }
+
+}
+
+class Project_Manager {
+    constructor(attr) {
+
     }
 }
 
 
-const dog = new Dog({
-    'name': 'Dr. Doggo',
-    'animalCommonName': "dog",
-    'weight': 40,
-    'height': 12,
-    'food': 'meat',
-    'bark': 'Woof!'
+
+
+
+
+
+
+
+
+
+
+
+const fred = new Instructor({
+    name: 'Fred',
+    location: 'Bedrock',
+    age: 37,
+    favLanguage: 'JavaScript',
+    specialty: 'Front-end',
+    catchPhrase: `Don't forget the homies`
 });
 
-console.log(dog.animalCommonName); // "dog"
-dog.eat(); // "The dog eats meat"
-dog.speak(); // "Dr. Doggo says: Woof!"
+const fred = new Student({
+    name: 'Doni',
+    location: 'Lardie',
+    age: 37,
+    favLanguage: 'TypeScript',
+    specialty: 'Front-end',
+    catchPhrase: `Let's Code!!`
+});
+
+const fred = new Project_Manager({
+    name: 'Sall',
+    location: 'Fnockford',
+    age: 37,
+    favLanguage: 'English?',
+    specialty: 'Design',
+    catchPhrase: `Watch my colors color`
+});
