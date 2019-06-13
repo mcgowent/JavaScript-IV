@@ -31,12 +31,16 @@ class Student extends Person {
         this.className = attr.className
         this.favSubjects = attr.favSubjects
     }
-    listsSubjects() {}
+    listsSubjects(subject) {
+        return subject.forEach(function (i) {
+            console.log(i)
+        })
+    }
     PRAssignment(subject) {
-        return `${student.name} has submitted a PR for ${subject}`
+        return `${this.name} has submitted a PR for ${subject}`
     }
     sprintChallenge(subject) {
-        return `${student.name} has begun sprint challenge on ${subject}`
+        return `${this.name} has begun sprint challenge on ${subject}`
     }
 }
 
@@ -67,9 +71,9 @@ const doni = new Student({
     name: 'Doni',
     location: 'Lardie',
     age: 37,
-    favLanguage: 'TypeScript',
-    specialty: 'Front-end',
-    catchPhrase: `Let's Code!!`
+    previousBackground: 'Plummer',
+    className: 'Web02',
+    favSubjects: ["Math", "English", "NotMath"],
 });
 
 const sall = new Project_Manager({
@@ -78,18 +82,26 @@ const sall = new Project_Manager({
     age: 37,
     favLanguage: 'English?',
     specialty: 'Design',
-    catchPhrase: `Watch my colors color`
+    catchPhrase: `Watch my colors color`,
+    gradClassName: 'Web11',
+    favInstructor: 'Fred'
 });
 
-//PM sall Methods
-console.log(sall.speak()) //Show say "Hello my name is Sall, I am from Fnockford"
-console.log(sall.demo("Constructor Functions")) // Today we are learning about Constructor Functions
-console.log(sall.grade(doni, "JavaScript"))
-console.log(sall.standUp("Radio"))
-//PM sall items
-console.log(sall.name) //Should Print 'Sall'
-console.log(sall.location) //Should Print Knockford
-console.log(sall.age) // 37
-console.log(sall.favLanguage) //English?
-console.log(sall.specialty) //Design
-console.log(sall.catchPhrase) // 'Watch my colors color
+//Methods--------------------------------------------------------------------------------------------
+console.log(sall.speak()) //--------------------------Hello my name is Sall, I am from Fnockford
+console.log(sall.demo("Constructor Functions")) //----Today we are learning about Constructor Functions
+console.log(sall.grade(doni, "JavaScript")) //--------Doni recieves a perfect score on JavaScript
+console.log(sall.standUp("Radio")) //-----------------Sall announces to Radio @channel standy times!
+console.log(sall.debugsCode(doni, "Math")) //---------Sall debugs Doni's code on Math
+doni.listsSubjects(doni.favSubjects)
+console.log(doni.PRAssignment("Java"))
+console.log(doni.sprintChallenge("Java"))
+
+
+//Random Items to Show Functionality------------------------------------------------------------------
+console.log(sall.name) //-----------------------------Should Print 'Sall'
+console.log(sall.location) //-------------------------Should Print Knockford
+console.log(sall.age) //------------------------------37
+console.log(sall.favLanguage) //----------------------English?
+console.log(sall.specialty) //------------------------Design
+console.log(sall.catchPhrase) //---------------------'Watch my colors color
