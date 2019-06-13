@@ -20,7 +20,7 @@ class Instructor extends Person {
         return `Today we are learning about ${subject}`
     }
     grade(student, string) {
-        return `${student.name} recieves a perfect score on ${subject}`
+        return `${student.name} recieves a perfect score on ${string}`
     }
 }
 
@@ -80,3 +80,16 @@ const sall = new Project_Manager({
     specialty: 'Design',
     catchPhrase: `Watch my colors color`
 });
+
+//PM sall Methods
+console.log(sall.speak()) //Show say "Hello my name is Sall, I am from Fnockford"
+console.log(sall.demo("Constructor Functions")) // Today we are learning about Constructor Functions
+console.log(sall.grade(doni, "JavaScript"))
+console.log(sall.standUp("Radio"))
+//PM sall items
+console.log(sall.name) //Should Print 'Sall'
+console.log(sall.location) //Should Print Knockford
+console.log(sall.age) // 37
+console.log(sall.favLanguage) //English?
+console.log(sall.specialty) //Design
+console.log(sall.catchPhrase) // 'Watch my colors color
