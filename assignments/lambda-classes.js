@@ -38,26 +38,21 @@ class Student extends Person {
     sprintChallenge(subject) {
         return `${student.name} has begun sprint challenge on ${subject}`
     }
-
 }
 
-class Project_Manager {
+class Project_Manager extends Instructor {
     constructor(attr) {
-
+        super(attr)
+        this.gradClassName = attr.gradClassName
+        this.favInstructor = attr.favInstructor
+    }
+    standUp(channel) {
+        return `${this.name} announces to ${channel} @channel standy times!`
+    }
+    debugsCode(student, subject) {
+        return `${this.name} debugs ${student.name}'s code on ${subject}`
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 const fred = new Instructor({
     name: 'Fred',
@@ -68,7 +63,7 @@ const fred = new Instructor({
     catchPhrase: `Don't forget the homies`
 });
 
-const fred = new Student({
+const doni = new Student({
     name: 'Doni',
     location: 'Lardie',
     age: 37,
@@ -77,7 +72,7 @@ const fred = new Student({
     catchPhrase: `Let's Code!!`
 });
 
-const fred = new Project_Manager({
+const sall = new Project_Manager({
     name: 'Sall',
     location: 'Fnockford',
     age: 37,
